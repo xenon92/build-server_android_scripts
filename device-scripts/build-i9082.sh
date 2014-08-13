@@ -22,9 +22,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-
 # Get time of startup
 res1=$(date +%s.%N)
+
 
 # Patches
 
@@ -32,33 +32,67 @@ res1=$(date +%s.%N)
 # where the patches need to applied
 
 
+echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#          COMPILING ANDROID          #"
+echo -e "#                                     #"
+echo -e "#   SAMSUNG GALAXY GRAND DUOS i9082   #"
+echo -e "#                                     #"
+echo -e "#######################################"
+echo -e ""
+
+
 # Move to aogp source
 cd ~/aogp-source
 
 # Clean previous build
+echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#              CLEANING               #"
+echo -e "#                                     #"
+echo -e "#######################################"
+echo -e ""
+
 make clean
 
-# repo sync will discard all external commits
+
+# Fetch and sync source
+echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#            SYNCING SOURCE           #"
+echo -e "#                                     #"
+echo -e "#######################################"
+echo -e ""
+
 repo sync -j50
 
 
 # Get prebuilts
+echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#          FETCHING PREBUILTS         #"
+echo -e "#                                     #"
+echo -e "#######################################"
+echo -e ""
+
 ./vendor/cm/get-prebuilts
 
 
+# Patching source
 echo -e ""
-echo -e ""
-echo -e "Applying patches for Galaxy Grand..."
-echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#           APPLYING PATCHES          #"
+echo -e "#                                     #"
+echo -e "#######################################"
 echo -e ""
 
 ./patches/install-all.sh
 
-echo -e ""
-echo -e ""
-echo -e "Fixing Chromium..."
-echo -e ""
-echo -e ""
 cd external/chromium_org/
 repo sync .
 git am 00*
@@ -67,30 +101,43 @@ cd ../../
 
 # Setup environment
 echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#           BUILD ENVIRONMENT         #"
+echo -e "#                                     #"
+echo -e "#######################################"
 echo -e ""
-echo -e "Setting up build environment..."
-echo -e ""
-echo -e ""
+
 . build/envsetup.sh
+
+
+# Set extra build flags
 
 # Set release type as NIGHTLY
 export RELEASE_TYPE=NIGHTLY
 
+
 # Lunch device
 echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#            LUCNHING DEVICE          #"
+echo -e "#                                     #"
+echo -e "#######################################"
 echo -e ""
-echo -e "Lunching device - i9082"
-echo -e ""
-echo -e ""
+
 lunch cm_i9082-userdebug
 
-echo -e ""
-echo -e ""
-echo -e "Starting compilation..."
-echo -e ""
-echo -e ""
 
 # Start compilation
+echo -e ""
+echo -e "#######################################"
+echo -e "#                                     #"
+echo -e "#               COMPILING             #"
+echo -e "#                                     #"
+echo -e "#######################################"
+echo -e ""
+
 mka bacon
 echo -e ""
 
