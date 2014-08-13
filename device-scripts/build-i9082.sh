@@ -1,5 +1,17 @@
+# Android Compilation Script
+#
+# This script automates the process of compiling android
+# operating system on build servers
+#
+# Copyright (C) 2014 Shubhang Rathore
+#
+# This script is to compile android firmware for
+# Samsung Galaxy Grand i9082
+
+
+
 # Get time of startup
-#res1=$(date +%s.%N)
+res1=$(date +%s.%N)
 
 # Patches
 
@@ -74,7 +86,10 @@ echo -e ""
 cp out/target/product/i9082/*NIGHTLY* ~/compiled_builds/i9082
 
 
-
 # Get elapsed time
-#res2=$(date +%s.%N)
-#echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
+res2=$(date +%s.%N)
+echo -e ""
+echo -e ""
+echo -e "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
+echo -e ""
+echo -e ""
