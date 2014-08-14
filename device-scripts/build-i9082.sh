@@ -43,7 +43,7 @@ echo -e "#######################################"
 echo -e ""
 
 
-# Move to aogp source
+# Change directory to android source
 cd ~/aogp-source
 
 # Clean previous build

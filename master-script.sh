@@ -32,7 +32,7 @@
 # Start tmux detached from main terminal
 # If the session already exists, this command will
 # be ignored
-tmux new-session -d -s build-aogp
+tmux new-session -d -s build-rom
 
 # Compiling Galaxy Grand i9082
 tmux send-keys './device-scripts/build-i9082.sh' enter
