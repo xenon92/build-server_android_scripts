@@ -121,7 +121,7 @@ export RELEASE_TYPE=NIGHTLY
 echo -e ""
 echo -e "#######################################"
 echo -e "#                                     #"
-echo -e "#            LUCNHING DEVICE          #"
+echo -e "#            LUNCHING DEVICE          #"
 echo -e "#                                     #"
 echo -e "#######################################"
 echo -e ""
