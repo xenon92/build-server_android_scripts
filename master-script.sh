@@ -34,5 +34,6 @@
 # be ignored
 tmux new-session -d -s build-rom
 
-# Compiling Galaxy Grand i9082
+# Compiling
+tmux send-keys '~/build-scripts/device-scripts/build-hammerhead.sh' enter
 tmux send-keys '~/build-scripts/device-scripts/build-i9082.sh' enter
