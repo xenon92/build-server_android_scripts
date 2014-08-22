@@ -114,7 +114,7 @@ echo -e ""
 # Set extra build flags
 
 # Set release type as NIGHTLY
-export RELEASE_TYPE=NIGHTLY
+export RELEASE_TYPE=WEEKLY
 
 
 # Lunch device
@@ -143,7 +143,16 @@ echo -e ""
 
 
 # Copy the compiled zip to another folder
-cp out/target/product/i9082/*NIGHTLY* ~/compiled_builds/i9082
+cp out/target/product/i9082/*WEEKLY* ~/compiled_builds/i9082
+
+
+# Copy the compiled zip to a folder from where it
+# will be uploaded through ftp, keeping only the most
+# recent build to be uploaded
+rm last_uploaded_builds/i9082/*
+cp out/target/product/i9082/*WEEKLY* ~/last_uploaded_builds/i9082
+
+
 
 
 # Get elapsed time
