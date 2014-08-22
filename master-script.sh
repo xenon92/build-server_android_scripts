@@ -35,5 +35,4 @@
 tmux new-session -d -s build-rom
 
 # Compiling
-tmux send-keys '~/build-scripts/device-scripts/build-hammerhead.sh' enter
 tmux send-keys '~/build-scripts/device-scripts/build-i9082.sh' enter
