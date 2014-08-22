@@ -44,7 +44,7 @@ echo -e ""
 
 
 # Change directory to android source
-cd ~/aogp-source
+cd ~/android-source
 
 # Clean previous build
 echo -e ""

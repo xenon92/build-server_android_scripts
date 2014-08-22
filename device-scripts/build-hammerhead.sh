@@ -26,11 +26,6 @@
 res1=$(date +%s.%N)
 
 
-# Patches
-
-# Put the *.patch or *.diff file in the base folder of each indivisual repo
-# where the patches need to applied
-
 
 echo -e ""
 echo -e "#######################################"
@@ -44,7 +39,7 @@ echo -e ""
 
 
 # Change directory to android source
-cd ~/aogp-source
+cd ~/android-source
 
 # Clean previous build
 echo -e ""
