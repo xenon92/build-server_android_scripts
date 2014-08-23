@@ -149,7 +149,7 @@ cp out/target/product/i9082/*WEEKLY* ~/compiled_builds/i9082
 # Copy the compiled zip to a folder from where it
 # will be uploaded through ftp, keeping only the most
 # recent build to be uploaded
-rm last_uploaded_builds/i9082/*
+rm -rf ~/last_uploaded_builds/i9082/*
 cp out/target/product/i9082/*WEEKLY* ~/last_uploaded_builds/i9082
 
 
